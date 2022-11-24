@@ -1,3 +1,5 @@
+name: deploy and configure
+on: [push]
 jobs:
   local:
     runs-on: Linux
