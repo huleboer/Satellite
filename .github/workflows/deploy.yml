@@ -1,17 +1,12 @@
-name: deploy and configure
-on: [push]
 jobs:
-  build:
+  local:
     runs-on: Linux
     steps:
-    - name: checkout repo
-      uses: actions/checkout@v2
-  deploy:
-    needs: build
-    runs-on: Linux
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ./.github/actions/ansible
-      with: 
-        playbook: playbook.yml
-        inventory: localhost
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Test it
+        uses: ./
+        with:
+          playbook: playbook.yml
+          directory: test
+          options: --inventory hosts
