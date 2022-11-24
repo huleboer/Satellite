@@ -1,7 +1,7 @@
 name: deploy and configure
 on: [push]
 jobs:
-  run:
+  Run Playbook test/test.yml:
     runs-on: Linux
     steps:
       - name: Run playbook 
