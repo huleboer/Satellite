@@ -6,9 +6,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Test it
+      - name: Run it
         uses: ./
         with:
           playbook: playbook.yml
           directory: test
-          options: --inventory hosts
+          options: --inventory host
