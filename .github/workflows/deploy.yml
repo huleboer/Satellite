@@ -4,5 +4,7 @@ jobs:
   Deploy:
     runs-on: Linux
     steps:
+      - name: Dir
+        run: pwd
       - name: Run playbook 
         run: ansible-playbook -i localhost test/deploy.yml 
