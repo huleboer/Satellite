@@ -5,4 +5,4 @@ jobs:
     runs-on: Linux
     steps:
       - name: Run playbook 
-        run: ansible-playbook -i localhost test/test.yml 
+        run: ansible-playbook -i localhost test/deploy.yml 
