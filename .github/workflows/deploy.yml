@@ -4,8 +4,6 @@ jobs:
   local:
     runs-on: Linux
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
       - name: Run it
         uses: ./
         with:
