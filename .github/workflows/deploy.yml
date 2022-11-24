@@ -1,12 +1,9 @@
 name: deploy and configure
 on: [push]
 jobs:
-  local:
+  run:
     runs-on: Linux
     steps:
-      - name: Run it
-        uses: ./
-        with:
-          playbook: playbook.yml
-          directory: test
-          options: --inventory host
+      - name: Run playbook 
+        run: |
+            echo "ansible-playbook -i localhost test/test.yml"
