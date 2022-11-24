@@ -4,6 +4,8 @@ jobs:
   Deploy:
     runs-on: Linux
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Dir
         run: pwd
       - name: Run playbook 
