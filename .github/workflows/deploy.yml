@@ -1,0 +1,21 @@
+name: deploy and configure
+on: [push]
+jobs:
+  build:
+    runs-on: Linux
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@master
+      with:
+        targets: ""
+  deploy:
+    needs: build
+    runs-on: Linux
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/ansible
+      with: 
+        playbook: playbook.yml
+        inventory: localhost
